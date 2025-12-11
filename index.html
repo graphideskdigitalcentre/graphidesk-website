@@ -1,137 +1,140 @@
-/* style.css — Classy modern look + Dark/Light theme via CSS variables */
-:root{
-  --white: #ffffff;
-  --black: #071028;
-  --muted: #64708a;
-  --bg: linear-gradient(180deg,#f6fbff 0%, #f3f8ff 100%);
-  --card: #ffffff;
-  --primary: #0b63c7;
-  --accent: #07b38a;
-  --glass: rgba(255,255,255,0.80);
-  --radius: 14px;
-  --soft-shadow: 0 10px 30px rgba(3,27,61,0.06);
-  --focus: 0 6px 20px rgba(11,99,199,0.12);
-  --wrapper: 1120px;
-  --gap: 18px;
-  color-scheme: light dark;
-}
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GraphiDesk Digital Centre</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo-mark">G</div>
+        <div>
+          <h1>GraphiDesk</h1>
+          <div class="sub">Digital Centre — Transparent Fees</div>
+        </div>
+      </div>
 
-/* Dark theme variables (applied when .theme-dark on <html>) */
-html.theme-dark {
-  --bg: linear-gradient(180deg,#071428 0%, #052433 100%);
-  --card: rgba(10,18,26,0.9);
-  --white: #e9f0fb;
-  --black: #eaf6ff;
-  --muted: #9fb0c6;
-  --primary: #58a6ff;
-  --accent: #4ad0a6;
-  --glass: rgba(255,255,255,0.04);
-  --soft-shadow: 0 10px 30px rgba(2,12,24,0.6);
-  --focus: 0 6px 20px rgba(88,166,255,0.12);
-}
+      <nav class="main-nav" aria-label="Primary">
+        <a href="govt-services.html">Govt</a>
+        <a href="banking.html">Banking</a>
+        <a href="digital-services.html">Digital</a>
+        <a href="ticketing.html">Ticketing</a>
+        <a href="utility.html">Utility</a>
+        <a href="business.html">Business</a>
+        <a href="courier.html">Courier</a>
+        <a href="education.html">Education</a>
 
-/* Base */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background:var(--bg);
-  color:var(--black);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
-  padding-bottom:48px;
-}
+        <!-- Theme toggle -->
+        <button id="themeToggle" class="theme-toggle" title="Toggle theme">🌙 <span id="thtxt" style="font-weight:700">Dark</span></button>
+      </nav>
+    </div>
+  </header>
 
-/* wrapper */
-.wrap{max-width:var(--wrapper);margin:20px auto;padding:0 18px}
+  <main class="wrap">
+    <section class="hero card" aria-labelledby="heroHead">
+      <div class="hero-left">
+        <h2 id="heroHead">Fast • Transparent • Local</h2>
+        <p>GraphiDesk Digital Centre — Ballarpur. CSC & government services with clear fee structure and instant receipts.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="govt-services.html">View Services</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
 
-/* Header */
-.top{padding:14px 0;backdrop-filter: blur(6px);}
-.top .wrap{display:flex;align-items:center;gap:12px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo-mark{
-  width:56px;height:56px;border-radius:12px;
-  background:linear-gradient(135deg,var(--primary),#4ea1ff);
-  color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;
-  box-shadow:var(--soft-shadow);
-}
-.brand h1{font-size:20px;margin-bottom:2px}
-.sub{font-size:13px;color:var(--muted)}
+        <div class="quick">
+          <a href="govt-services.html" class="chip">PAN & Aadhaar</a>
+          <a href="utility.html" class="chip">Bill Payment</a>
+          <a href="digital-services.html" class="chip">Printing</a>
+          <a href="banking.html" class="chip">Banking</a>
+        </div>
 
-/* Nav + theme toggle */
-.main-nav{margin-left:auto;display:flex;gap:12px;align-items:center}
-.main-nav a{color:var(--primary);text-decoration:none;font-weight:700;padding:8px 12px;border-radius:10px}
-.main-nav a:hover{background:rgba(11,99,199,0.06)}
-.theme-toggle{
-  display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 8px;background:transparent;border:1px solid rgba(0,0,0,0.06);cursor:pointer;
-  color:var(--muted);font-weight:700;
-}
-html.theme-dark .theme-toggle{border-color:rgba(255,255,255,0.06);color:var(--white)}
+        <div style="margin-top:16px" class="note" aria-live="polite">
+          <strong>सूचना:</strong> किसी भी श्रेणी (category) की कीमत अपडेट करने के लिए, संबंधित `.html` फ़ाइल खोलकर तालिका/मूल्य को संपादित करें — फ़ाइल अपलोड करते ही बदलाव साइट पर दिखने लगेंगे।  
+          (यह तरीका तेज़ और सीधे है — Google Sheets की जरूरत नहीं।)
+        </div>
+      </div>
 
-/* Card */
-.card{
-  background:var(--card);border-radius:var(--radius);box-shadow:var(--soft-shadow);padding:20px;margin-bottom:var(--gap);
-  border: 1px solid rgba(0,0,0,0.03);
-}
-html.theme-dark .card{border-color: rgba(255,255,255,0.03)}
+      <div class="hero-right">
+        <div class="price-grid" aria-hidden="true">
+          <div class="small-card"><div class="k">PAN New</div><div class="v">₹207</div></div>
+          <div class="small-card"><div class="k">E-Shram</div><div class="v">₹50</div></div>
+          <div class="small-card"><div class="k">Labour Card</div><div class="v">₹100</div></div>
+          <div class="small-card"><div class="k">Bill Fee</div><div class="v">₹10+</div></div>
+        </div>
 
-/* Hero */
-.hero{display:flex;gap:18px;align-items:stretch;padding:26px 20px;overflow:hidden}
-.hero-left{flex:1;min-width:260px}
-.hero-right{width:320px;display:flex;flex-direction:column;gap:12px}
-h2{font-size:28px;margin-bottom:8px}
-.hero p{color:var(--muted);margin-bottom:12px}
-.hero-cta{display:flex;gap:10px;margin-bottom:12px}
-.btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none;border:1px solid transparent;font-weight:800}
-.btn.primary{background:var(--primary);color:var(--white);box-shadow:var(--focus)}
-.btn.ghost{background:transparent;color:var(--primary);border:1px solid rgba(11,99,199,0.08)}
+        <div class="card small">
+          <strong>Working Hours:</strong>
+          <div class="small">9:00 AM – 7:00 PM</div>
+          <div style="margin-top:8px"><strong>Call:</strong> 9322410521 / 9325023809</div>
+        </div>
+      </div>
+    </section>
 
-/* chips */
-.chip{display:inline-block;padding:8px 10px;border-radius:999px;background:rgba(11,99,199,0.06);color:var(--primary);text-decoration:none;font-weight:700;margin-right:8px;margin-top:6px}
+    <section class="cards" aria-label="Categories">
+      <a class="big-card" href="govt-services.html"><div class="icon">🏛️</div><h3>Government Services</h3><p>PAN, Aadhaar, Passport, E-Shram & more</p></a>
+      <a class="big-card" href="banking.html"><div class="icon">🏦</div><h3>Banking & Finance</h3><p>Account opening, CSP, PF, Loans</p></a>
+      <a class="big-card" href="digital-services.html"><div class="icon">💻</div><h3>IT & Digital</h3><p>Form filling, printing, web & design</p></a>
+      <a class="big-card" href="ticketing.html"><div class="icon">🎟️</div><h3>Ticketing</h3><p>Train, Bus, Flight & Hotel booking</p></a>
+      <a class="big-card" href="utility.html"><div class="icon">🔌</div><h3>Utility Bills</h3><p>Electricity, Water, Gas, Mobile recharge</p></a>
+      <a class="big-card" href="business.html"><div class="icon">📄</div><h3>Business Registration</h3><p>MSME, GST, FSSAI & licences</p></a>
+      <a class="big-card" href="courier.html"><div class="icon">📦</div><h3>Courier & Delivery</h3><p>Speed Post, Courier booking, pick-up</p></a>
+      <a class="big-card" href="education.html"><div class="icon">🎓</div><h3>Education & Exam</h3><p>Exam registrations, admit print</p></a>
+    </section>
 
-/* price-grid */
-.price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.small-card{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(250,252,255,0.85));padding:12px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(0,0,0,0.03)}
-.small-card .k{color:var(--muted);font-weight:700}
-.small-card .v{font-size:18px;font-weight:900;color:var(--primary)}
-html.theme-dark .small-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-color:rgba(255,255,255,0.03)}
+    <div id="contact" class="card" style="margin-top:18px">
+      <h3>Contact & Address</h3>
+      <p>GraphiDesk Digital Centre — Colliery Road, Old Basti, Ballarpur</p>
+      <p>📞 9322410521 | 9325023809</p>
+      <p class="small">WhatsApp: <a href="https://wa.me/919322410521" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+    </div>
 
-/* grid cards */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-.big-card{text-decoration:none;background:linear-gradient(180deg,#fff,#fbfdff);padding:16px;border-radius:12px;display:flex;flex-direction:column;gap:10px;box-shadow:0 12px 30px rgba(2,19,42,0.05);color:inherit;border:1px solid #eef6ff;transition:transform .18s ease, box-shadow .18s ease}
-.big-card .icon{font-size:28px}
-.big-card h3{margin-top:6px;font-size:18px}
-.big-card p{color:var(--muted);font-size:14px}
-.big-card:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(2,19,42,0.08)}
-html.theme-dark .big-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-color: rgba(255,255,255,0.03)}
+    <div class="footer">© <span id="y"></span> GraphiDesk Digital Centre — Designed by Yashnil</div>
+  </main>
 
-/* content pages */
-.wrap .page-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
-.table{width:100%;border-collapse:collapse;margin-top:8px}
-.table th,.table td{padding:14px;border-bottom:1px solid rgba(2,19,42,0.04);text-align:left}
-.table thead th{background:rgba(11,99,199,0.04);font-weight:800}
-html.theme-dark .table th,.table td{border-bottom:1px solid rgba(255,255,255,0.04)}
-ul.clean{list-style:none;padding-left:0}
-ul.clean li{padding:12px 0;border-bottom:1px dashed rgba(2,19,42,0.03)}
+<script>
+/* THEME HANDLER */
+/* Logic:
+   1) If user saved preference in localStorage -> use it
+   2) Else follow OS preference (prefers-color-scheme)
+   3) Toggle button sets localStorage and updates <html> class "theme-dark"
+*/
+(function(){
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const txt = document.getElementById('thtxt');
 
-/* helper */
-.note{background:linear-gradient(90deg,#f8fffb,#fcfffe);border-left:4px solid var(--accent);padding:12px;border-radius:8px;font-size:14px}
-html.theme-dark .note{background:transparent;border-left-color:var(--accent);color:var(--muted)}
+  function applyTheme(name){
+    if(name === 'dark'){
+      root.classList.add('theme-dark');
+      txt.textContent = 'Dark';
+      toggle.textContent = '🌙 Dark';
+    } else {
+      root.classList.remove('theme-dark');
+      txt.textContent = 'Light';
+      toggle.textContent = '☀️ Light';
+    }
+  }
 
-/* footer */
-.footer{margin-top:24px;text-align:center;color:var(--muted);font-size:14px;padding:18px}
+  // initial: check saved, otherwise OS preference
+  let saved = localStorage.getItem('gdc-theme');
+  if(saved === 'dark' || saved === 'light'){
+    applyTheme(saved);
+  } else {
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
 
-/* responsive */
-@media (max-width:980px){
-  .cards{grid-template-columns:repeat(2,1fr)}
-  .hero{flex-direction:column}
-  .hero-right{width:100%}
-  .main-nav{display:none}
-}
-@media (max-width:600px){
-  .cards{grid-template-columns:1fr}
-  .logo-mark{width:48px;height:48px}
-  h2{font-size:20px}
-  .wrap{padding:0 12px}
-}
+  // click toggler
+  toggle.addEventListener('click', function(){
+    const isDark = root.classList.contains('theme-dark');
+    const next = isDark ? 'light' : 'dark';
+    localStorage.setItem('gdc-theme', next);
+    applyTheme(next);
+  });
+})();
+document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
