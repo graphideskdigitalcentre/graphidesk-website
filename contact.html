@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — GraphiDesk Digital Centre</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="brand"><div class="logo-mark">G</div><div><h1>GraphiDesk</h1><div class="sub">Contact</div></div></div>
+      <nav class="main-nav"><a href="index.html">Home</a><button id="themeToggle" class="theme-toggle">🌙 <span id="thtxt">Dark</span></button></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Contact & Visit</h2>
+      <p>GraphiDesk Digital Centre, Colliery Road, Old Basti, Ballarpur</p>
+
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:12px">
+        <div style="flex:1;min-width:220px">
+          <h3>Phone</h3>
+          <p>📞 9322410521<br>📞 9325023809</p>
+          <p><a class="btn primary" href="https://wa.me/919322410521" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <h3>Hours</h3>
+          <p>⏰ Monday – Saturday: 9:00 AM – 7:00 PM</p>
+          <p>⏰ Sunday: Closed / By appointment</p>
+        </div>
+      </div>
+
+      <div style="margin-top:18px">
+        <h3>Quick Visit Map</h3>
+        <a href="https://maps.google.com/?q=Colliery+Road+Ballarpur" target="_blank" rel="noopener">Open map & directions</a>
+      </div>
+    </section>
+
+    <div class="footer">© <span id="year-contact"></span> GraphiDesk Digital Centre</div>
+  </main>
+
+<script>
+(function(){
+  const root=document.documentElement;
+  let saved=localStorage.getItem('gdc-theme');
+  if(saved==='dark') root.classList.add('theme-dark');
+  else if(saved==='light') root.classList.remove('theme-dark');
+  else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) root.classList.add('theme-dark');
+
+  const toggle=document.getElementById('themeToggle');
+  const txt=document.getElementById('thtxt');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      const isDark=root.classList.contains('theme-dark');
+      const next=isDark?'light':'dark';
+      localStorage.setItem('gdc-theme', next);
+      if(next==='dark'){ root.classList.add('theme-dark'); txt.textContent='Dark'; toggle.textContent='🌙 Dark'; }
+      else { root.classList.remove('theme-dark'); txt.textContent='Light'; toggle.textContent='☀️ Light'; }
+    });
+  }
+  document.getElementById('year-contact').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
