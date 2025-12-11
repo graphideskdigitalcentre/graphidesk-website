@@ -1,3 +1,4 @@
+<!-- Services list sourced from uploaded PDF. :contentReference[oaicite:1]{index=1} -->
 <!doctype html>
 <html lang="hi">
 <head>
@@ -40,7 +41,7 @@
         <p>GraphiDesk Digital Centre — Ballarpur. CSC & government services with clear fee structure and instant receipts.</p>
         <div class="hero-cta">
           <a class="btn primary" href="govt-services.html">View Services</a>
-          <a class="btn ghost" href="#contact">Contact</a>
+          <a class="btn ghost" href="contact.html">Contact</a>
         </div>
 
         <div class="quick">
@@ -51,8 +52,9 @@
         </div>
 
         <div style="margin-top:16px" class="note" aria-live="polite">
-          <strong>सूचना:</strong> किसी भी श्रेणी (category) की कीमत अपडेट करने के लिए, संबंधित `.html` फ़ाइल खोलकर तालिका/मूल्य को संपादित करें — फ़ाइल अपलोड करते ही बदलाव साइट पर दिखने लगेंगे।  
-          (यह तरीका तेज़ और सीधे है — Google Sheets की जरूरत नहीं।)
+          <strong>सूचना — अपडेट करना आसान:</strong>
+          संबंधित श्रेणी (category) की कीमत बदलने के लिए, उस श्रेणी की `.html` फ़ाइल खोलें और तालिका/मूल्य बदल कर नई फ़ाइल अपलोड कर दें — बदलाव तुरंत वेबसाइट पर लागू हो जाएगा। (Google Sheets की आवश्यकता नहीं।)
+          <div style="margin-top:6px;color:var(--muted);font-size:13px">Tip: For quick edits, open the category file, update the numbers, re-upload the file to the repo.</div>
         </div>
       </div>
 
@@ -83,28 +85,22 @@
       <a class="big-card" href="education.html"><div class="icon">🎓</div><h3>Education & Exam</h3><p>Exam registrations, admit print</p></a>
     </section>
 
-    <div id="contact" class="card" style="margin-top:18px">
+    <div class="card" id="contact-summary" style="margin-top:18px">
       <h3>Contact & Address</h3>
       <p>GraphiDesk Digital Centre — Colliery Road, Old Basti, Ballarpur</p>
       <p>📞 9322410521 | 9325023809</p>
       <p class="small">WhatsApp: <a href="https://wa.me/919322410521" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
     </div>
 
-    <div class="footer">© <span id="y"></span> GraphiDesk Digital Centre — Designed by Yashnil</div>
+    <div class="footer">© <span id="year"></span> GraphiDesk Digital Centre — Designed by Yashnil</div>
   </main>
 
 <script>
-/* THEME HANDLER */
-/* Logic:
-   1) If user saved preference in localStorage -> use it
-   2) Else follow OS preference (prefers-color-scheme)
-   3) Toggle button sets localStorage and updates <html> class "theme-dark"
-*/
+/* THEME HANDLER (toggle + persist) */
 (function(){
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const txt = document.getElementById('thtxt');
-
   function applyTheme(name){
     if(name === 'dark'){
       root.classList.add('theme-dark');
@@ -116,8 +112,6 @@
       toggle.textContent = '☀️ Light';
     }
   }
-
-  // initial: check saved, otherwise OS preference
   let saved = localStorage.getItem('gdc-theme');
   if(saved === 'dark' || saved === 'light'){
     applyTheme(saved);
@@ -125,8 +119,6 @@
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     applyTheme(prefersDark ? 'dark' : 'light');
   }
-
-  // click toggler
   toggle.addEventListener('click', function(){
     const isDark = root.classList.contains('theme-dark');
     const next = isDark ? 'light' : 'dark';
@@ -134,7 +126,7 @@
     applyTheme(next);
   });
 })();
-document.getElementById('y').textContent=new Date().getFullYear();
+document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
