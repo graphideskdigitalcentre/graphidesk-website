@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="hi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Utility Bills - GraphiDesk</title>
+  <link rel="stylesheet" href="style.css"></head>
+<body>
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+      <a class="btn" href="index.html">⬅ Home</a>
+      <h2>Utility & Daily Use Services</h2>
+    </div>
+
+    <div class="card">
+      <table class="table">
+        <thead><tr><th>Bill Type</th><th>Our Fee</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Electricity Bill Payment</td><td>₹10</td><td>Per transaction slab applies</td></tr>
+          <tr><td>Water Bill Payment</td><td>₹10</td><td></td></tr>
+          <tr><td>Gas Bill Payment</td><td>₹10</td><td></td></tr>
+          <tr><td>Mobile Recharge</td><td>₹5</td><td>Instant</td></tr>
+          <tr><td>DTH Recharge</td><td>₹5</td><td></td></tr>
+          <tr><td>FASTag Recharge</td><td>₹10</td><td></td></tr>
+        </tbody>
+      </table>
+
+      <p class="small" style="margin-top:8px">Tip: For slab logic (e.g., fee varies by amount), mention slab on this page or in-store.</p>
+    </div>
+
+    <div class="footer">© <span id="y5"></span> GraphiDesk</div>
+  </div>
+<script>document.getElementById('y5').textContent=new Date().getFullYear();</script>
+</body>
+</html>
