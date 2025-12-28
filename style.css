@@ -1,5 +1,5 @@
 /* =========================================================
-   style.css — FINAL Premium Classy Look (Light + Dark)
+   style.css — FINAL (Solid Background, No Gradient)
    ========================================================= */
 
 /* -------------------- Root (Light) -------------------- */
@@ -8,9 +8,10 @@
   --black:#071028;
   --muted:#64708a;
 
-  --bg:linear-gradient(180deg,#f6fbff 0%, #f3f8ff 100%);
-  --card:#ffffff;
+  /* SOLID BACKGROUND (NO GRADIENT) */
+  --bg:#f5f9ff;
 
+  --card:#ffffff;
   --primary:#0b63c7;
   --accent:#1ec9a8;
 
@@ -28,14 +29,10 @@
 
 /* -------------------- Dark Theme -------------------- */
 html.theme-dark{
-  --bg:radial-gradient(
-    1200px 600px at 50% -10%,
-    #0b2740 0%,
-    #071a2e 45%,
-    #050f1d 100%
-  );
-  --card:rgba(10,18,26,.9);
+  /* SOLID DARK BACKGROUND (NO GRADIENT) */
+  --bg:#071a2e;
 
+  --card:rgba(10,18,26,.9);
   --white:#e9f0fb;
   --black:#eaf6ff;
   --muted:#9fb0c6;
@@ -72,23 +69,14 @@ body{
   top:10px;
   z-index:60;
   margin:6px 0 18px;
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,.65),
-    rgba(255,255,255,.35)
-  );
+  background:rgba(255,255,255,.75);
   backdrop-filter:blur(6px) saturate(120%);
   border-radius:14px;
   box-shadow:0 8px 24px rgba(2,19,42,.05);
 }
 html.theme-dark .top{
-  background:linear-gradient(
-    180deg,
-    rgba(15,25,35,.65),
-    rgba(15,25,35,.35)
-  );
+  background:rgba(15,25,35,.75);
 }
-
 .top .wrap{
   display:flex;
   align-items:center;
@@ -153,25 +141,12 @@ html.theme-dark .card{
   display:flex;
   gap:18px;
   padding:26px;
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,.85),
-    rgba(255,255,255,.65)
-  );
-}
-html.theme-dark .hero{
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,.03),
-    rgba(255,255,255,.01)
-  );
 }
 .hero-left{flex:1}
 .hero-right{width:320px;display:flex;flex-direction:column;gap:12px}
 
 h2{font-size:28px;margin-bottom:8px}
 .hero p{color:var(--muted);margin-bottom:12px}
-
 .hero-cta{display:flex;gap:10px}
 
 /* Buttons */
@@ -211,23 +186,12 @@ h2{font-size:28px;margin-bottom:8px}
   gap:10px;
 }
 .small-card{
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,.95),
-    rgba(250,252,255,.9)
-  );
+  background:var(--card);
   padding:12px;
   border-radius:10px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-}
-html.theme-dark .small-card{
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,.03),
-    rgba(255,255,255,.01)
-  );
 }
 .small-card .k{color:var(--muted);font-weight:700}
 .small-card .v{
@@ -245,11 +209,7 @@ html.theme-dark .small-card{
   gap:14px;
 }
 .big-card{
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,.96),
-    rgba(248,252,255,.92)
-  );
+  background:var(--card);
   border-radius:12px;
   padding:18px;
   text-decoration:none;
@@ -260,13 +220,6 @@ html.theme-dark .small-card{
 .big-card:hover{
   transform:translateY(-4px);
   box-shadow:0 20px 60px rgba(0,0,0,.25);
-}
-html.theme-dark .big-card{
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,.03),
-    rgba(255,255,255,.01)
-  );
 }
 
 /* -------------------- Tables -------------------- */
